@@ -61,5 +61,110 @@ body
 	font-family: 'Arial'
 // font-family: 'Ubuntu', sans-serif;
 // font-family: 'Ubuntu Condensed', sans-serif;
-
+.icon 
+	display: inline
+	width: 1em
+	height: 1em
+	stroke-width: 0
+	stroke: currentColor
+	fill: currentColor
+	vertical-align: bottom
+.icon-connection 
+	width: 1.25em
+.logo img
+	display: inline-block
+	float: left
+.logo .h1
+	margin: -5px 0 0 10px
+	font-family: 'Ubuntu', sans-serif
+	font-size: 30px
+	font-weight: 400
+	color: #434343
+	line-height: 1
+	letter-spacing: 1px
+	display: inline-block
+	span
+		text-transform: uppercase
+		font-size: 12px
+		font-weight: 300
+		letter-spacing: 4px
+		margin-left: 1px
+		display: block
+		opacity: 0.9
+.social-top
+	display: flex
+	justify-content: space-between
+	margin: 38px 0px
+// social-icons 
+.social-icons li
+	display: inline-block
+	text-decoration: none
+	margin-right: 15px
+	a
+		display: block
+		color: #ccc
+		transition: all 0.3s ease
+.social-icons li:last-child
+	margin-right: 0px
+.social-icons li:nth-child(3) 
+	margin-right: 8px
+	a
+		transform: rotate(45deg)
+		.icon-connection
+			position: relative
+			top: 5px
+.social-icons li:nth-child(4) a .fa-linkedin-in
+	font-size: 16px
+	display: inline
+	vertical-align: bottom
+	color: inherit
+	&::before 
+		display: inline
+		vertical-align: bottom
+.social-icons li:hover a
+	transition: all 0.3s ease
+	color: #248cec
+//=============================== navigation section ==============//
+nav
+	display: flex
+	justify-content: space-between
+	background-color: #2a2d32
+nav .menu, .manu-search
+	display: flex
+	padding: 0
+	margin: 0
+	li
+		list-style: none
+		a
+			text-decoration: none
+nav .menu .active
+	background-color: #248cec
+nav .menu li
+	padding: 20px 37px
+	position: relative
+	&::before
+		content: ""
+		position: absolute
+		right: 0px
+		top: 0
+		width: 1px
+		height: 100%
+		background: linear-gradient(360deg, #515357, #222529)
+	&::after
+		content: ""
+		position: absolute
+		right: -1px
+		top: 0
+		width: 1px
+		height: 100%
+		background-color: #070708
+	&:hover a
+		color: #f4b60d
+		transition: all 0.3s ease
+	a
+		transition: all 0.3s ease
+		text-transform: uppercase
+		font-family: 'Ubuntu Condensed', sans-serif
+		font-size: 14px
+		color: #fff
 @import "media" // Всегда в конце
