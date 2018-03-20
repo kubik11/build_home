@@ -24,5 +24,9 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "vinyl-ftp": "^0.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "owl.carousel": "^2.3.2"
   }
 }
