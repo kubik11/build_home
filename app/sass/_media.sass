@@ -1,7 +1,33 @@
 @import "vars"
 
 /*==========  Desktop First  ==========*/
-
+@media only screen and (max-width : 1495px)
+	.owl-nav
+		right: -8%
+@media only screen and (max-width : 1320px)
+	.owl-nav
+		left: 0
+		width: 100%
+		justify-content: space-between
+		flex-direction: row
+		.owl-prev
+			order: 1
+			.icon-arrow-left2
+				fill: rgba(#fff, .5)
+				transition: all 0.5s ease
+			&:hover
+				.icon-arrow-left2
+					fill: rgba(#fff, .9)
+					transition: all 0.5s ease
+		.owl-next
+			order: 2
+			.icon-arrow-right2
+				transition: all 0.5s ease
+				fill: rgba(#fff, .5)
+			&:hover
+				.icon-arrow-right2
+					transition: all 0.5s ease
+					fill: rgba(#fff, .9)
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
 	/**/

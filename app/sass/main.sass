@@ -61,6 +61,8 @@ body
 	font-family: 'Arial'
 // font-family: 'Ubuntu', sans-serif;
 // font-family: 'Ubuntu Condensed', sans-serif;
+header
+	margin-bottom: 40px
 .icon 
 	display: inline
 	width: 1em
@@ -129,6 +131,19 @@ nav
 	display: flex
 	justify-content: space-between
 	background-color: #2a2d32
+	position: relative
+	z-index: 5
+	opacity: 1
+	&::after
+		content: ""
+		display: block
+		position: absolute
+		width: 98%
+		transform: translateX(-50%)
+		left: 50%
+		bottom: 0
+		z-index: -1
+		box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, .75)
 nav .menu, .manu-search
 	display: flex
 	padding: 0
@@ -139,6 +154,8 @@ nav .menu, .manu-search
 			text-decoration: none
 nav .menu .active
 	background-color: #248cec
+nav .menu >li >a
+	text-transform: uppercase
 nav .menu li
 	padding: 20px 37px
 	position: relative
@@ -158,13 +175,226 @@ nav .menu li
 		width: 1px
 		height: 100%
 		background-color: #070708
-	&:hover a
+	&:hover >a
 		color: #f4b60d
 		transition: all 0.3s ease
 	a
 		transition: all 0.3s ease
-		text-transform: uppercase
 		font-family: 'Ubuntu Condensed', sans-serif
 		font-size: 14px
 		color: #fff
+	&:nth-child(4)
+		transition: all 0.5s ease
+		&:hover .embeded
+			display: block
+			animation: down 0.5s ease-in-out
+// ============================== DropDown Menu ==================================//
+nav .menu .embeded
+	margin: 0
+	padding: 0
+	display: none 
+	position: absolute
+	top: 100%
+	left: 0
+	background-color: #3e4045
+	animation: up 0.5s ease-in-out
+	li
+		list-style: none
+		padding: 10px  87px 10px 20px
+		transition: all 0.5s eased
+		position: relative
+		border-bottom: #484a4e 1px solid
+		border-top: #38393e 1px solid
+		a
+			white-space: nowrap
+			color: rgba(#fff, .3)
+			font-family: 'Arial'
+			font-size: 12px
+		&:hover	a
+			color: #fff
+			transition: all 0.5s ease
+		&::before
+			content: none
+		&::after
+			content: none
+		&:first-child
+			border-top: none
+		&:last-child
+			border-bottom: none
+// ===============================================================search section
+.search-input
+	position: relative
+	background-color: #3e4045
+	padding: 0px 20px 0px 13px
+	display: none
+	.icon-search
+		vertical-align: middle
+		fill: #58595d
+	.cross
+		vertical-align: middle
+		color: #58595d
+		cursor: pointer
+	.search
+		height: 100%
+		border: none
+		background-color: inherit
+		outline: none
+		margin-left: 7px
+		font-family: 'Arial'
+		font-size: 12px
+		font-weight: 400
+		color: #fff
+		max-width: 173px
+		width: 173px
+	
+.manu-search li:first-child
+	color: #fff
+	padding: 0px 14px
+	.icon-cart, .wrap-count, .fa-search
+		color: inherit
+		display: inline
+		vertical-align: middle
+		line-height: 66px
+	.icon-cart
+		width: 13px
+		height: 14px
+	.wrap-count
+		font-size: 14px
+		margin-left: 7px
+	.count
+		font-size: 16px
+		font-weight: 400
+.manu-search li:last-child
+	color: #fff
+	cursor: pointer
+	.fa-search
+		color: inherit
+		font-size: 14px
+		vertical-align: middle
+		line-height: 66px
+		padding: 0px 20px 
+.manu-search li
+	position: relative
+	&::before
+		content: ""
+		position: absolute
+		left: -1px
+		top: 0
+		width: 1px
+		height: 100%
+		background: linear-gradient(360deg, #515357, #222529)
+	&::after
+		content: ""
+		position: absolute
+		left: 0px
+		top: 0
+		width: 1px
+		height: 100%
+		background-color: #070708
+// ======================================= slider-top=======================
+.slider-top
+	margin-bottom: 70px
+	position: relative
+	&::before
+		content: ""
+		position: absolute
+		top: 50%
+		left: 0
+		transform: translateY(-50%)
+		width: 50%
+		height: 370px
+		background-image: url('../img/bg_slider_left.jpg')
+		background-repeat: no-repeat
+		background-size: cover
+	&::after
+		content: ""
+		position: absolute
+		top: 50%
+		right: 0
+		transform: translateY(-50%)
+		width: 50%
+		height: 370px
+		background-image: url('../img/bg_slider_right.jpg')
+		background-repeat: no-repeat
+		background-size: cover
+.top-carousel-item
+	height: 470px
+	width: 100%
+	background-size: cover
+	background-position: 0 2px
+	background-repeat: no-repeat
+// ====================================== owl-nav ====================
+.owl-nav
+	position: absolute
+	display: flex
+	flex-direction: column
+	align-items: center
+	right: -16%
+	top: 50%
+	transform: translateY(-50%)
+	.owl-prev
+		outline: none
+		order: 2
+		.icon-arrow-left2
+			fill: rgba(#248cec, .15)
+			width: 4em
+			height: 4em
+	.owl-next
+		outline: none
+		order: 1
+		.icon-arrow-right2
+			fill: rgba(#248cec, .15)
+			width: 4em
+			height: 4em
+	.owl-next:hover .icon-arrow-right2
+		fill: rgba(#248cec, .9)
+	.owl-prev:hover .icon-arrow-left2
+		fill: rgba(#248cec, .9)
+
+// ====================================== owl-dots ===================
+.owl-dots
+	position: absolute
+	left: 0
+	bottom: 0
+	width: 100%
+	text-align: center
+	z-index: 5
+	button.owl-dot
+		z-index: 5
+		margin: 0px 6px 
+		width: 10px
+		height: 10px
+		background: #fff 
+		border: 2px solid #fff
+.owl-dots .active
+	background: #000 !important
+	outline: none !important
+.slider-top .top-carousel
+	perspective: 50px
+	position: relative
+	&::after
+		content: ""
+		display: block
+		position: absolute
+		width: 80%
+		transform: translateX(-50%)
+		transform: rotateX(45deg);
+		transform: perspective(300px) rotateX(45deg);
+		left: 10%
+		border-radius: 10px
+		bottom: 16px
+		z-index: -1
+		box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, .75)
+@keyframes down 
+	from
+		opacity: 0
+	to
+		opacity: 1
+@keyframes up
+	from 
+		opacity: 1
+	to
+		opacity: 0
+		display: none
+
 @import "media" // Всегда в конце
